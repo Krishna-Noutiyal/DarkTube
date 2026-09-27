@@ -4,4 +4,4 @@ function invert_video() {
     video.style.filter = "invert(1) hue-rotate(180deg)";
 }
 
-
+invert_video()
