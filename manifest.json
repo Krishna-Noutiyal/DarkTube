@@ -1,25 +1,33 @@
-{
-    "name": "DarkTube",
-    "description": "Open-Source Extension to Invert YouTube videos color and save your eyes 😊",
-    "version": "1.0.0",
-    "manifest_version": 3,
-    "action": {
-        "default_popup": "popup/popup.html",
-        "default_icon": "assets/icons/icon-128.png"
-    },
-    "icons":{
-        "16": "assets/icons/icon-16.png",
-        "32": "assets/icons/icon-32.png",
-        "48": "assets/icons/icon-48.png",
-        "128": "assets/icons/icon-128.png"
-    },
-    "content_scripts":[
-        {
-            "js":["script/core.js"],
-            "matches":[
-                "https://www.youtube.com/watch?v=*"
-            ]
-        }
-    ]
 
+Manifest · JSON
+{
+  "name": "DarkTube",
+  "description": "Open-Source Extension to Invert YouTube videos color and save your eyes 😊",
+  "version": "1.1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "assets/icons/icon-128.png"
+  },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "script/core.js"
+      ],
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
 }
