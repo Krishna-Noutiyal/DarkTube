@@ -17,7 +17,7 @@
         {
             "js":["script/core.js"],
             "matches":[
-                "https://www.youtube.com/watch?v=*"
+                "https://www.youtube.com/watch*"
             ]
         }
     ],
@@ -26,6 +26,12 @@
             "resources": ["assets/icons/dark.svg","assets/icons/light.svg"],
             "matches":["https://www.youtube.com/*"]
         }
+    ],
+    "background":{
+        "service_worker": "script/service-worker.js"
+    },
+    "permissions": [
+        "tabs"
     ]
 
 }
