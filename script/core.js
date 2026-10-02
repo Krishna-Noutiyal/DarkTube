@@ -67,8 +67,11 @@ function set_video_mode(mode) {
 // The Watchdog Logic
 const observer = new MutationObserver((mutations) => {
     // Check if YouTube has rendered the controls AND our button is missing
+    console.log("Inside Watchdog")
     if (document.querySelector(".ytp-right-controls-left") && !document.querySelector("#darkYtButton")) {
+        console.log("Double Inside Watchdog")
         addButton();
+        observer.disconnect()
     }
 });
 // Start watching the entire webpage for elements being added or removed
