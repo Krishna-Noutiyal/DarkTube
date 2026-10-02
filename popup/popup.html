@@ -4,35 +4,191 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <style>
-            @font-face {
-                font-family: "Domine";
-                src: url("../assets/fonts/Domine-VariableFont_wght.ttf");
+            /* Import a clean, modern sans-serif font */
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+            :root {
+                --bg-color: #121212;
+                --surface-color: #1e1e1e;
+                --text-primary: #f3f4f6;
+                --text-secondary: #9ca3af;
+                --accent-color: #a855f7;
+                /* A subtle, modern purple */
+                --border-color: #2dd4bf20;
+                /* Very faint teal/purple border */
             }
+
             body {
-                background: rgba(23, 1, 33, 1);
+                background-color: var(--bg-color);
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                color: var(--text-primary);
+                width: 320px;
+                /* Fixed width for extension popups is often best */
             }
 
             * {
-                font-family: "Domine";
-                color: azure;
+                box-sizing: border-box;
             }
 
             .container {
-                margin: 1rem 2rem;
-                min-height: 400px;
-                min-width: 200px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 24px;
+                background: var(--surface-color);
+                /* Subtle inner glow/border for depth without harsh lines */
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            }
+
+            .header {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 24px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding-bottom: 16px;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+                font-weight: 600;
+                letter-spacing: -0.025em;
+                margin: 0;
+                display: flex;
                 align-items: center;
-                text-align: center;
+                gap: 8px;
+            }
+
+            /* A small dot to represent the "mode" toggle visually */
+            .logo::before {
+                content: '';
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: var(--accent-color);
+            }
+
+            .tagline {
+                font-size: 0.85rem;
+                color: var(--text-secondary);
+                font-weight: 300;
+                margin-top: 4px;
+                margin-bottom: 0;
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .info-card {
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 8px;
+                padding: 16px;
+            }
+
+            .info-card h3 {
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                color: var(--text-secondary);
+                margin-top: 0;
+                margin-bottom: 12px;
+                font-weight: 600;
+            }
+
+            .info-card p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin: 0 0 12px 0;
+                color: var(--text-primary);
+            }
+
+            .info-card p:last-child {
+                margin-bottom: 0;
+            }
+
+            .highlight {
+                color: var(--accent-color);
+                font-weight: 400;
+            }
+
+            .footer {
+                margin-top: 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 0.75rem;
+                color: var(--text-secondary);
+            }
+
+            a {
+                color: var(--text-secondary);
+                text-decoration: none;
+                transition: color 0.2s ease;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+
+            a:hover {
+                color: var(--text-primary);
+            }
+
+            /* Simple GitHub icon using CSS borders */
+            .gh-icon {
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border: 1.5px solid currentColor;
+                border-radius: 50%;
+                position: relative;
+            }
+
+            .gh-icon::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 2px;
+                width: 6px;
+                height: 4px;
+                border-bottom: 1.5px solid currentColor;
+                border-right: 1.5px solid currentColor;
             }
         </style>
     </head>
 
     <body>
         <div class="container">
+            <div class="header">
+                <h1 class="logo">DarkTube</h1>
+                <p class="tagline">Eye strain relief for YouTube.</p>
+            </div>
 
-            <h1>Hello World</h1>
+            <div class="content">
+                <div class="info-card">
+                    <h3>How to use</h3>
+                    <p>The toggle button is injected directly into the player.</p>
+                    <p>Hover over any YouTube video and look for the <span class="highlight">DarkTube icon</span> in the
+                        bottom control bar to switch modes.</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <span>v1.0.0</span>
+                <a href="https://github.com/Krishna-Noutiyal/DarkTube" target="_blank">
+                    <span class="gh-icon"></span> GitHub
+                </a>
+            </div>
         </div>
     </body>
 

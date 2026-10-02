@@ -1,6 +1,6 @@
 {
     "name": "DarkTube",
-    "description": "Open-Source Extension to Invert YouTube videos color and save your eyes 😊",
+    "description": "Open-Source Extension to Invert YouTube videos color and save your eyes",
     "version": "1.0.0",
     "manifest_version": 3,
     "action": {
